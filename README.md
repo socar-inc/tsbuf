@@ -1,3 +1,11 @@
+### [socar-server](https://github.com/socar-inc/socar-server) 의 프론트엔드 소스에서 proto 파일을 typescript 인터페이스로 트랜스파일하여 사용할 목적으로 포크하였습니다.
+
+### 원본 소스에서 비어있는 message 파일을 파싱할 때 발생하는 에러를 수정하였고, Enum 파일의 값이 인덱스 대신 프로퍼티 명으로 셋팅하도록 수정하였습니다. 아래의 커밋 메세지 참조 바랍니다.
+
+[수정사항 커밋](https://github.com/socar-inc/tsbuf/commit/c1176268271921bafe489832c427d836dbf79e24)
+
+# 이하 원본 READ.md 파일 내용
+
 # tsbuf  [![npm@version](https://img.shields.io/npm/v/tsbuf.svg)](https://www.npmjs.com/package/tsbuf) [![Build Status](https://travis-ci.org/Means88/tsbuf.svg?branch=master)](https://travis-ci.org/Means88/tsbuf) [![Coverage Status](https://coveralls.io/repos/github/Means88/tsbuf/badge.svg?branch=master)](https://coveralls.io/github/Means88/tsbuf?branch=master)
 
 Generate TypeScript enum and interface with proto buffer.
