@@ -418,7 +418,7 @@ EnumValueOption
 // Message definition
 
 Message
-  = "message" _ name:MessageName __ body:(MessageBody / "{" __ "}") {
+  = "message" _ name:MessageName __ body:MessageBody {
     return {
       type: 'Message',
       name,
