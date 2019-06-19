@@ -16,11 +16,6 @@
     "test:watch": "jest --watch --notify",
     "test:ci": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.test.ts": [
       "yarn prettier --write",
