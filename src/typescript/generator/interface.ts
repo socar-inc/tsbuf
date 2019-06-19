@@ -35,7 +35,7 @@ function getType(field: InterfaceTreeField, it: InterfaceTree): string {
   if (field.repeated) {
     fullName += '[]';
   }
-  return fullName;
+  return fullName.replace(/[A-Za-z]+\./g, "");
 }
 
 function generateNormalField(f: InterfaceTreeNormalField, it: InterfaceTree): string {

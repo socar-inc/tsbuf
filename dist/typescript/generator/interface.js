@@ -9,7 +9,7 @@ function getType(field, it) {
     if (field.repeated) {
         fullName += '[]';
     }
-    return fullName;
+    return fullName.replace(/[A-Za-z]+\./g, "");
 }
 function generateNormalField(f, it) {
     return "" + f.name + (f.optional ? '?' : '') + ": " + getType(f, it) + ";";
