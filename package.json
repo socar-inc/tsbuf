@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "bin": "tsbuf",
   "scripts": {
-    "postinstall": "rimraf dist && gulp build copy",
+    "build": "rimraf dist && gulp build copy",
+    "postinstall": "./node_modules/.bin/gulp build copy",
     "lint": "run-s lint:prettier lint:tslint",
     "lint:prettier": "prettier-check '{src,test}/**/*.ts'",
     "lint:tslint": "tslint -t stylish -p .",
