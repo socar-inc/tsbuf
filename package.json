@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "bin": "tsbuf",
   "scripts": {
-    "build": "rimraf dist && gulp build copy",
+    "postinstall": "rimraf dist && gulp build copy",
     "lint": "run-s lint:prettier lint:tslint",
     "lint:prettier": "prettier-check '{src,test}/**/*.ts'",
     "lint:tslint": "tslint -t stylish -p .",
@@ -102,10 +102,5 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "files": [
-    "dist",
-    "tsbuf",
-    "src"
-  ]
+  }
 }
