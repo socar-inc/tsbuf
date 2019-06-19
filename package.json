@@ -106,6 +106,7 @@
   },
   "files": [
     "dist",
-    "tsbuf"
+    "tsbuf",
+    "src"
   ]
 }
