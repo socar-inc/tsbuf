@@ -1,6 +1,6 @@
 {
   "name": "tsbuf",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Generate TypeScript enum and interface with proto buffer.",
   "main": "dist/index.js",
   "bin": "tsbuf",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Means88/tsbuf.git"
+    "url": "git+https://github.com/socar-inc/tsbuf.git"
   },
   "keywords": [
     "protobuf",
