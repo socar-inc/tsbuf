@@ -97,5 +97,9 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "files": [
+    "dist",
+    "tsbuf"
+  ]
 }
