@@ -4,6 +4,7 @@ import * as mkdirp from 'mkdirp';
 import * as path from 'path';
 import * as prettier from 'prettier';
 import { Parser } from '../parser';
+import * as _ from 'lodash';
 
 import { GenerateMode } from '../typescript';
 import { Generator } from '../typescript/generator';
@@ -107,7 +108,8 @@ export class TypeScriptExporter {
         if (!tsDependencyPath.startsWith('.')) {
           tsDependencyPath = `.${path.sep}${tsDependencyPath}`;
         }
-        importString += `import { ${importedMembers.join(', ')} } from '${tsDependencyPath}';\n`;
+        // Enum 타입을 Nested 타입으로 사용하면, State, Type 등으로 명명하므로 충돌 방지.
+        importString += `import { ${importedMembers.filter(it=> !_.includes(['Type', 'State'], it)).join(', ')} } from '${tsDependencyPath}';\n`;
         if (!importStatement.public) {
           continue;
         }

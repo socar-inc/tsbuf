@@ -16,6 +16,7 @@ var mkdirp = __importStar(require("mkdirp"));
 var path = __importStar(require("path"));
 var prettier = __importStar(require("prettier"));
 var parser_1 = require("../parser");
+var _ = __importStar(require("lodash"));
 var typescript_1 = require("../typescript");
 var generator_1 = require("../typescript/generator");
 var enum_1 = require("../typescript/generator/enum");
@@ -108,7 +109,8 @@ var TypeScriptExporter = /** @class */ (function () {
                 if (!tsDependencyPath.startsWith('.')) {
                     tsDependencyPath = "." + path.sep + tsDependencyPath;
                 }
-                importString += "import { " + importedMembers.join(', ') + " } from '" + tsDependencyPath + "';\n";
+                // Enum 타입을 Nested 타입으로 사용하면, State, Type 등으로 명명하므로 충돌 방지.
+                importString += "import { " + importedMembers.filter(function (it) { return !_.includes(['Type', 'State'], it); }).join(', ') + " } from '" + tsDependencyPath + "';\n";
                 if (!importStatement.public) {
                     continue;
                 }
